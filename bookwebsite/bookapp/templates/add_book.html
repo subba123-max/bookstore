@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BookStore</title>
+</head>
+<body>
+<form method="POST">
+    {% csrf_token%}
+    <table>
+{{form}}
+    </table><br>
+    <input type="submit" value="add">
+    <a href="{%url 'bookworld'%}">back</a>
+    </form>
+
+{{message}}
+
+</body>
+</html>

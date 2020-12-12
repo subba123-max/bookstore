@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Bookstore</title>
+    <style>
+            #tr{
+                background-color:lightgreen;
+                color:black;
+                }
+          #table{
+          border-collapse: collapse;
+          }
+          a{
+          text-decoration:none;
+
+          }
+          a:hover{
+          background-color:lightgreen;
+          color:black;
+          }
+#back{
+
+background-color:lightgreen;
+text-decoration:none;
+border-radius:5px;
+}
+#back:hover{
+background-color:red;
+border-radius:5px;
+}
+    </style>
+</head>
+<body>
+<table  border="1" id="table">
+    <tr id="tr">
+        <th>id</th>
+        <th>Booktitle</th>
+        <th>author</th>
+        <th>price</th>
+         <th>Publisher</th>
+       <th></th>
+        <th></th>
+
+    </tr>
+    {%for show in showbooks%}
+    <tr>
+        <th>{{show.id}}</th>
+        <th>{{show.book_title}}</th>
+        <th>{{show.author}}</th>
+        <th>{{show.price}}</th>
+        <th>{{show.publisher}}</th>
+        <th><a href="{% url 'editbook' show.id %}"> Edit</a></th>
+        <th><a href="{% url 'deletebook' show.id%}">Delete</a></th>
+    </tr>
+
+    {% endfor %}
+</table>
+ <a href="{%url 'bookworld' %}" id="back">back</a>
+</body>
+</html>

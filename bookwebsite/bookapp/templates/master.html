@@ -1,0 +1,35 @@
+{% block body_body %}
+<style>
+   div {
+   background-color:lightblue;
+<!--   height:50px;-->
+   color:white;
+   font-size:20px;
+
+
+
+   }
+   div a{
+   text-decoration:none;
+<!--   border:1px solid red;-->
+   margin:20px;
+
+   }
+   div a:hover{
+    background-color:white;
+    border-radius:10px;
+ }
+ div h1{
+ background-color:green;
+ height:50px;
+ color:white
+    }
+</style>
+<div id="">
+    <h1  align="center">Welcome to BookWorld</h1>
+
+    <a href="{% url 'addbook' %}">Addbook</a>||
+    <a href="{% url 'booklist' %}">showbooks</a>
+</div>
+{% endblock %}
+
